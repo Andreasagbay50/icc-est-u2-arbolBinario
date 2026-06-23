@@ -1,14 +1,46 @@
+import java.util.Random;
+
+import models.Person;
 import structures.node.Node;
+import structures.trees.BinaryTree;
+import structures.trees.Ejercicio1;
 import structures.trees.IntTree;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
-        runIntTree();
-    }
+        //runIntTree();
+        //runPersonTree();
+        runEjercicio();
 
+    
+    }
+    private static void runEjercicio() {
+        Ejercicio1 ejercicio1 = new Ejercicio1();
+        int[] numeros = new int[]{5,3,7,2,4,6,8};
+        ejercicio1.insert(numeros);
+    }
+    private static void runPersonTree() {
+        BinaryTree<Person> personTree = new BinaryTree<>();
+        personTree.insert(new Person("Alice", 30));
+        personTree.insert(new Person("Bob", 25));
+        personTree.insert(new Person("Diego", 35));
+        personTree.insert(new Person("Rafael", 35));
+        personTree.insert(new Person("Ana", 35));
+
+        personTree.inOrder();
+    }
+    
+
+
+   
+    
+        
+    
     private static void runIntTree() {
-        IntTree arbolNumeros = new IntTree(); /// CLASE ARBOL
+        IntTree arbolNumeros = new IntTree(); 
+
+    /// CLASE ARBOL
 
         // Node<Integer> node3 = new Node<>(30);
         // Node<Integer> node4 = new Node<>(40);
@@ -53,5 +85,50 @@ public class App {
         System.out.println("Peso");
         System.out.println(arbolNumeros.peso());
 
+    }
+    private static void runIntComparativaPesos() {
+        IntTree tree = new IntTree();
+        Random random = new Random();
+
+        final int TOTAL_NODOS = 50_000;
+        final int MIN = 1;
+        final int MAX = 50_000;
+
+        // Insertar 50 000 números aleatorios entre 1 y 50 000
+        for (int i = 0; i < TOTAL_NODOS; i++) {
+            int value = random.nextInt(MAX - MIN + 1) + MIN;
+            tree.insert(value);
+        }
+
+        // Medir peso con variable acumulada
+        long inicioPesoVariable = System.nanoTime();
+
+        int pesoVariable = tree.getPeso();
+
+        long finPesoVariable = System.nanoTime();
+
+        double tiempoPesoVariableMs = (finPesoVariable - inicioPesoVariable) / 1_000_000.0;
+
+        // Medir peso recursivo
+        long inicioPesoRecursivo = System.nanoTime();
+
+        int pesoRecursivo = tree.peso();
+
+        long finPesoRecursivo = System.nanoTime();
+
+        double tiempoPesoRecursivoMs = (finPesoRecursivo - inicioPesoRecursivo) / 1_000_000.0;
+
+        // Resultados
+        System.out.println("Cantidad de nodos insertados: " + TOTAL_NODOS);
+        System.out.println("Peso usando variable: " + pesoVariable);
+        System.out.println("Peso usando recursion: " + pesoRecursivo);
+
+        System.out.println();
+
+        System.out.println("Tiempo getPeso(): "
+                + tiempoPesoVariableMs + " ms");
+
+        System.out.println("Tiempo pesoRecursivo(): "
+                + tiempoPesoRecursivoMs + " ms");
     }
 }

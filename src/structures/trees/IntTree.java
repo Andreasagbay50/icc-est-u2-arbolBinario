@@ -10,11 +10,13 @@ import structures.node.Node;
 public class IntTree {
 
     private Node<Integer> root;
+    private int peso;
 
     /// Constructor SIEMPRE inicializa LAS VARIABLES (ROOT)
     public IntTree() {
         this.root = null;
     }
+    
 
     public boolean isEmpty() {
         return root == null;
@@ -36,7 +38,12 @@ public class IntTree {
     public void insert(Integer value) { // 10
         Node<Integer> node = new Node<Integer>(value);
         root = insertRecursivo(root, node);
+        peso++;
     }
+    public int getPeso(){
+        return peso();
+    }
+    
 
     public void insert(Node<Integer> value) { // 10
         root = insertRecursivo(root, value);
@@ -148,6 +155,11 @@ public class IntTree {
         int pesoIzquierda = pesoRecursivo(actual.getLeft());
         int pesoDerecha = pesoRecursivo(actual.getRight());
         return pesoIzquierda + pesoDerecha + 1;
+        
+
     }
+    
+  
+    
 
 }
