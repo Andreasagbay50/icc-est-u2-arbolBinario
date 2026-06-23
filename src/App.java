@@ -9,9 +9,9 @@ import structures.trees.IntTree;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        //runIntTree();
-        //runPersonTree();
-        runEjercicio();
+        runIntTree();
+        runPersonTree();
+        //runEjercicio();
 
     
     }

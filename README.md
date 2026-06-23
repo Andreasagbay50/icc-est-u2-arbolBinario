@@ -1,18 +1,36 @@
-## Getting Started
+# Práctica: Arbol Binario
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Datos del Estudiante
+- **Nombre:** Andrea Sagbay
+- **Curso:** Grupo 3 
+- **Fecha:** 16/06/2026
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## 1. Implementación del Arbol Binario con PreOrder, PosOrder, InOrder, Niveles y altura
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+**Fecha:** [16/06/2026]
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+**Descripción:**  Aprendimos como funcionan los arboles binarios con su diferentes recorridos (preOrden, posOrden, inOrden y por niveles).
+![alt text](image.png)
 
-## Dependency Management
+# Práctica: Arbol Binario Generico
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Datos del Estudiante
+- **Nombre:** Andrea Sagbay
+- **Curso:** Grupo 3 
+- **Fecha:** 17/06/2026
+
+---
+
+## 2. Implementación de Arbol Binario Genrico
+
+
+**Fecha:** [02/06/2026]
+
+**Descripción:** Continuamos con el Árbol Binario y empleamos clases genéricas. También incorporamos un método para determinar el peso del árbol, que representa el número de nodos. Además, utilizamos CompareTo para realizar comparaciones basadas en el nombre o la edad.
+![alt text](image-1.png)
+
+
+
