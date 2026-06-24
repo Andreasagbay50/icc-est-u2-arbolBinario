@@ -1,5 +1,8 @@
 import java.util.Random;
+import java.util.Set;
 
+import collections.set.Sets;
+import models.Contacto;
 import models.Person;
 import structures.node.Node;
 import structures.trees.BinaryTree;
@@ -12,15 +15,47 @@ import structures.trees.IntTree;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        runIntTree();
-        runEjercicios1();
-        runEjercicios2();
-        runEjercicio3();
-        runEjercicio4();
+        //runIntTree();
+        //runEjercicios1();
+        //runEjercicios2();
+        //runEjercicio3();
+        //runEjercicio4();
+        runSets();
 
     }
+   private static void runSets() {
+        Sets sets = new Sets();
+        //Primera implementacion: HashSet
+        System.out.println("HashSet");
+        Set<String> hashSet = sets.construirHasSet();
+        System.out.println(hashSet);
+        System.out.println("Tamaño: " + hashSet.size());
+        System.out.println(hashSet.contains("F"));
+
+        Set<String> linkedHashSet = sets.construirLinkedHashSets();
+        System.out.println(linkedHashSet);
+        System.out.println("Tamaño: " + linkedHashSet.size());
+        System.out.println(linkedHashSet.contains("B"));
+
+          Set<String> treSet = sets.construirTreSet();
+        System.out.println(treSet);
+        System.out.println("Tamaño: " + treSet.size());
+        System.out.println(treSet.contains("B"));
+
+        System.out.println("TreSet");
+        Set<Contacto> tCSet = sets.construirTreeSetConComparador();
+        System.out.println(tCSet);
+        System.out.println(tCSet.size());
+
+        System.out.println("TreSet");
+        Set<Contacto> hCSet = sets.construirHashSetContactos();
+        System.out.println(hCSet);
+        System.out.println(hCSet.size());
 
 
+
+   }
+   
 public static void runEjercicios1() {
 
     Ejercicio1 ejercicio1 = new Ejercicio1();
