@@ -1,6 +1,7 @@
 import java.util.Random;
 import java.util.Set;
 
+import collections.maps.Maps;
 import collections.set.Sets;
 import models.Contacto;
 import models.Person;
@@ -20,9 +21,26 @@ public class App {
         //runEjercicios2();
         //runEjercicio3();
         //runEjercicio4();
-        runSets();
+       // runSets();
+       runMaps();
 
     }
+    
+       private static void runMaps() {
+        Maps maps = new Maps();
+        maps.cTreMap();
+       }
+
+
+       //private static void runMaps() {
+        //Maps maps = new Maps();
+        //maps.coLinkedHashMap();
+       //}
+   // private static void runMaps() {
+     //   Maps maps = new Maps();
+       // maps.construirHashMap();
+
+    //}
    private static void runSets() {
         Sets sets = new Sets();
         //Primera implementacion: HashSet
