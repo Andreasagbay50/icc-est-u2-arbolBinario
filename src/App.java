@@ -6,6 +6,9 @@ import collections.set.Sets;
 import models.Contacto;
 import models.Person;
 import structures.grafos.Graph;
+import structures.grafos.PathResult;
+import structures.grafos.implementations.BFSPathFinder;
+import structures.grafos.implementations.DFSPathFinder;
 import structures.node.Node;
 import structures.trees.BinaryTree;
 import structures.trees.Ejercicio1;
@@ -24,9 +27,52 @@ public class App {
         //runEjercicio4();
        // runSets();
        //runMaps();
-        runGraphs();
-
+        //runGraphs();
+       runGraphs2();
+        runGraphs3();
     }
+
+    private static void runGraphs3() {
+        Graph<String> g = new Graph<>();
+        g.addEdge("A", "B");
+        g.addEdge("A", "C");
+        g.addEdge("B", "D");
+        g.addEdge("C", "J");
+        g.addEdgeUni("D", "E");
+        g.addEdge("E", "F");
+        g.addEdgeUni("K", "j");
+        g.printGraph();
+
+        BFSPathFinder<String> bfs = new BFSPathFinder<>();
+        PathResult<String> result =bfs.find(g, "A", "F");
+        System.out.println(result);
+        PathResult<String> result2 =bfs.find(g, "A", "J");
+        System.out.println(result2);
+        PathResult<String> result3 =bfs.find(g, "A", "K");
+        System.out.println(result3);
+    }
+
+    private static void runGraphs2() {
+        Graph<String> g = new Graph<>();
+        g.addEdge("A", "B");
+        g.addEdge("A", "C");
+        g.addEdge("B", "D");
+        g.addEdge("C", "J");
+        g.addEdgeUni("D", "E");
+        g.addEdge("E", "F");
+        g.addEdgeUni("K", "j");
+        g.printGraph();
+
+        DFSPathFinder<String> dfs = new DFSPathFinder<>();
+        PathResult<String> result =dfs.find(g, "A", "F");
+        System.out.println(result);
+        PathResult<String> result2 =dfs.find(g, "A", "J");
+        System.out.println(result2);
+        PathResult<String> result3 =dfs.find(g, "A", "K");
+        System.out.println(result3);
+    }
+
+    
     private static void runGraphs(){
         Graph<String>graph = new Graph<>();
         graph.add("A");
